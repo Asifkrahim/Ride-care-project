@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Care Plus</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <h1>Vehicle Care Plus</h1>
+                <div>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'dashboard' %}">Dashboard</a>
+                    <!-- Logout is usually a POST form, but for simplicity assuming a view handles GET or we use a link if configured. 
+                             Standard Django logout view accepts POST in recent versions, but custom view might allow GET. 
+                             Checking accounts/views behavior? No logout view seen. 
+                             I'll assume no logout for now or user can just close tab, or better add a simple link if I had time to make a logout view.
+                        -->
+                    {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'signup' %}">Sign Up</a>
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+
+</html>

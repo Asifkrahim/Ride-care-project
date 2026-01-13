@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --primary: #ff0000;
+    --primary-dark: #cc0000;
+    --bg: #050505;
+    --card-bg: #121212;
+    --text: #ffffff;
+    --text-muted: #a0a0a0;
+    --border: #333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+}
+
+header {
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* push logout to the right */
+    align-items: center;
+}
+
+nav h1 {
+  margin-right: auto;
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    border-left: 4px solid var(--primary);
+    padding-left: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 500px;
+}
+
+label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+input, select {
+    background: #0a0a0a;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    color: white;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+}
+
+button {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-self: flex-start;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    color: var(--text-muted);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.message {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    color: var(--primary);
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.auth-card h2 {
+    border-left: none; /* Remove side border for centered title */
+    padding-left: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.auth-card form {
+    width: 100%; /* Ensure form takes full width */
+}
+
+.auth-card button {
+    width: 100%; /* Full width button */
+    justify-content: center;
+}
+
+.link-text {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.link-text a {
+  color: var(--primary);
+  text-decoration: none;
+}
